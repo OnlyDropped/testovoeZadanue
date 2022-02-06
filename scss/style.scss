@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+@import "reset";
+@import "global";
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+.main {
+  width: 870px;
+  //background-color: aqua;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 30px;
+}
+.card-link {
+  display: block;
+  text-decoration: none;
+  //background-color: #11be75;
+  transition: all 0.6s ease-in;
+  &:hover {
+    opacity: 0.8;
+    transform: translateY(-5px);
+  }
+}
+.sidebar {
+  width: 270px;
+  //background-color: green;
+}
+.card {
+  width: 270px;
+  border-radius: 4px;
+  overflow: auto;
+  position: relative;
+  &__badges {
+    position: absolute;
+    display: flex;
+    top: 10px;
+    left: 15px;
+  }
+  &__badges > * + * {
+    margin-left: 10px;
+  }
+  &__badge {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 3px 10px;
+    background: #ffcf26;
+    border-radius: 4px;
+    color: #000;
+  }
+  &__badge--credit {
+    background: #11be75;
+    color: #fff;
+  }
+  &__content {
+    padding: 16px 15px 20px;
+    background: #fff;
+  }
+  &__title {
+    margin: 0;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.16;
+    line-height: 1.14;
+    color: #000;
+    margin-bottom: 11px;
+  }
+  &__term {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.14;
+    line-height: 1.1;
+    color: #000;
+    margin-bottom: 11px;
+  }
+  &__metro {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.14;
+    color: #000;
+    padding-left: 26px;
+    position: relative;
+    margin-bottom: 11px;
+    &::before {
+      position: absolute;
+      content: "";
+      width: 16px;
+      height: 11px;
+      left: 0;
+      background-image: url("../img/metro.svg");
+    }
+  }
+  &__address {
+    font-weight: 40;
+    font-size: 14px;
+    line-height: 1.14;
+    color: #777;
+  }
+}
+.btn-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: #e5e5e5;
+  border: none;
+  border-radius: 4px;
+  padding: 26px 0 30px;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #4290c9;
+  transition: background-color 0.2s ease-in-out;
+  &:hover {
+    background-color: #ccc;
+  }
+  img {
+    margin-right: 10px;
+  }
+}
+
+.widget {
+  width: 100%;
+  margin-bottom: 30px;
+  &__title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.16;
+    color: #000;
+    margin-bottom: 21px;
+    position: relative;
+    background: firebrick;
+    cursor: pointer;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 20px;
+      height: 20px;
+      right: 0;
+      top: 0;
+      background-image: url("../img/arrow.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: initial;
+    }
+  }
+  &__body {
+    width: 100%;
+  }
+}
+.location {
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #d6d6d6;
+    border-radius: 4px 4px 0px 0px;
+    overflow: hidden;
+    &:last-child {
+      border-radius: 0px 0px 4px 4px;
+      border-top: none;
+    }
+  }
+  &__btn {
+    height: 50px;
+    padding: 0 15px;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 50px;
+    color: #3c3c3c;
+    text-align: center;
+    cursor: pointer;
+    flex-grow: 1;
+  }
+  &__checkbox {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    opacity: 0;
+    appearance: none;
+  }
+  &__checkbox:checked + .location__btn {
+    background: #ffcf26;
+  }
+}
+.radio {
+  display: block;
+  cursor: pointer;
+  background-color: fuchsia;
+  margin-bottom: 15px;
+  width: fit-content;
+  &__real {
+    //width: 1px;
+    //height: 1px;
+    //position: absolute;
+    //opacity: 0;
+    //appearance: none;
+    
+  }
+  &__real:checked + .real__fake::before {
+    position: absolute;
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: #3c3c3c;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.18;
+    color: #3c3c3c;
+  }
+  &__fake {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ffe074;
+    //background-color: #fff;
+    border: 1px solid #777777;
+  }
+}
+@import "media";
