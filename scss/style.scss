@@ -239,8 +239,21 @@
 //}
 
 .radio {
+  display: block;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: fit-content;
+}
+.radio + .radio {
+  margin-top: 15px;
 }
 .radio__real {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  opacity: 0;
+  appearance: none;
 }
 .radio__real:checked + .radio__fake::before {
   content: "";
@@ -253,6 +266,13 @@
   background: #3c3c3c;
   transform: translate(-50%, -50%);
 }
+.radio__real:checked + .radio__fake {
+  background-color: #ffe074;
+}
+.radio__real:checked ~ .radio__title {
+  font-weight: 500;
+  color: #000;
+}
 .radio__fake {
   position: relative;
   display: inline-block;
@@ -260,7 +280,8 @@
   height: 20px;
   border-radius: 50%;
   //background: linear-gradient(0deg, #ffe074, #ffe074), #ffffff;
-  background-color: #ffe074;
+
+  background-color: #fff;
   border: 1px solid #777777;
 }
 
@@ -269,5 +290,101 @@
   font-size: 16px;
   line-height: 1.18;
   color: #000;
+  margin-left: 10px;
+  font-weight: 400;
+  color: #3c3c3c;
+}
+
+.checkbox {
+  display: block;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: fit-content;
+}
+.checkbox + .checkbox {
+  margin-top: 15px;
+}
+.checkbox__real {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  opacity: 0;
+  appearance: none;
+}
+.checkbox__real:checked + .checkbox__fake::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 10px;
+  background-image: url("../img/check.svg");
+  transform: translate(-50%, -50%);
+}
+.checkbox__real:checked + .checkbox__fake {
+  background-color: #ffe074;
+}
+.checkbox__real:checked ~ .checkbox__title {
+  font-weight: 500;
+  color: #000;
+}
+.checkbox__real {
+}
+.checkbox__fake {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 1px solid #777777;
+  border-radius: 2px;
+}
+.checkbox__title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.18;
+  color: #000;
+  margin-left: 10px;
+  font-weight: 400;
+  color: #3c3c3c;
+}
+.widget__hidden {
+  margin-top: 15px;
+  display: none;
+}
+.widget__show-hidden {
+  display: inline-block;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  margin-top: 15px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  cursor: pointer;
+  color: #4290c9;
+  transition: opacity 0.2s ease-in;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.toggle {
+}
+.toggle__real {
+}
+.toggle__fake {
+}
+.toggle__real:checked ~ .toggle__title {
+  font-weight: 500;
+  color: #000;
+}
+.toggle__title {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #3c3c3c;
 }
 @import "media";
