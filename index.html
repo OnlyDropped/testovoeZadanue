@@ -254,7 +254,7 @@
         </main>
         <div class="sidebar">
 
-          
+          <form>
           <div class="widget">
             <div class="widget__title">Близость к метро</div>
             <div class="widget__body">
@@ -264,14 +264,14 @@
                     class="location__checkbox"
                     type="checkbox"
                     id="location-01"
-                    checked
+                    checked data-location-param
                   />
                   <label class="location__btn" for="location-01">< 10</label>
 
                   <input
                     class="location__checkbox"
                     type="checkbox"
-                    id="location-02"
+                    id="location-02" data-location-param
                     checked
                   />
                   <label class="location__btn" for="location-02">10-20</label>
@@ -279,14 +279,14 @@
                   <input
                     class="location__checkbox"
                     type="checkbox"
-                    id="location-03"
+                    id="location-03" data-location-param
                   />
                   <label class="location__btn" for="location-03">20-30</label>
 
                   <input
                     class="location__checkbox"
                     type="checkbox"
-                    id="location-04"
+                    id="location-04" data-location-param
                   />
                   <label class="location__btn" for="location-04">30+</label>
                 </div>
@@ -370,38 +370,32 @@
                 <span class="checkbox__title">Малоэтажный</span>
               </label>
 
-              <div class="widget__hidden">
 
-                <label class="checkbox">
+                <label class="checkbox checkbox-hidden">
                   <input class="checkbox__real" type="checkbox" name="term"/>
                   <span class="checkbox__fake"></span>
                   <span class="checkbox__title">Высокие потолки</span>
                 </label>
 
-                <label class="checkbox">
+                <label class="checkbox checkbox-hidden">
                   <input class="checkbox__real" type="checkbox" name="term"/>
                   <span class="checkbox__fake"></span>
                   <span class="checkbox__title">Панорамные окна</span>
                 </label>
 
-                <label class="checkbox">
+                <label class="checkbox checkbox-hidden">
                   <input class="checkbox__real" type="checkbox" name="term"/>
                   <span class="checkbox__fake"></span>
                   <span class="checkbox__title">Есть кладовые</span>
                 </label>
 
-                <label class="checkbox">
+                <label class="checkbox checkbox-hidden">
                   <input class="checkbox__real" type="checkbox" name="term"/>
                   <span class="checkbox__fake"></span>
                   <span class="checkbox__title">Малоэтажный</span>
                 </label>
 
-              </div>
-
-              <button class="widget__show-hidden">Показать ещё</button>
-
-
-              
+              <button data-options="hidden" class="widget__show-hidden">Показать ещё</button>
 
             </div>
           </div>
@@ -428,7 +422,7 @@
               <button class="form-btn form-btn--submit">Применить фильтры</button>
               
 
-              <button class="form-btn form-btn--reset">
+              <button class="form-btn form-btn--reset" type="reset">
                 <img src="img/x.svg" alt="reset icon">
                 Сбросить фильтры</button>
               
@@ -438,7 +432,7 @@
           </div>
 
 
-
+          </form>
 
         </div>
 

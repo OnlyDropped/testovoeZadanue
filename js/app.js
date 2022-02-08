@@ -1,10 +1,10 @@
-//const sidebarToggleBtn = document.querySelector('.menu-icon-wrapper');
-//const menuIcon = document.querySelector('.menu-icon');
-//const sideBar = document.querySelector('.sidebar');
+const sidebarToggleBtn = document.querySelector('.menu-icon-wrapper');
+const menuIcon = document.querySelector('.menu-icon');
+const sideBar = document.querySelector('.sidebar');
 /*jshint esversion: 6 */
-document.querySelector('.menu-icon-wrapper').onclick = function () {
-  document.querySelector('.menu-icon').classList.toggle('menu-icon-active');
-  document.querySelector('.sidebar').classList.toggle('sidebar--mobile-active');
+sidebarToggleBtn.onclick = function () {
+  menuIcon.classList.toggle('menu-icon-active');
+  sideBar.classList.toggle('sidebar--mobile-active');
 };
 
 
@@ -30,4 +30,50 @@ widgets.forEach(function (widget) {
     }
   });
 });
-//
+
+
+
+const checkBoxAny = document.querySelector('#location-05');
+const topLocationCheckboxes = document.querySelectorAll('[data-location-param]');
+
+checkBoxAny.addEventListener('change', function () {
+  if (checkBoxAny.checked) {
+    topLocationCheckboxes.forEach(function (item) {
+      item.checked = false;
+    });
+  }
+});
+
+topLocationCheckboxes.forEach(function (item) {
+  item.addEventListener('change', function () {
+    if (checkBoxAny.checked) {
+      checkBoxAny.checked = false;
+    }
+  })
+});
+
+
+
+
+const showMoreOptions = document.querySelector('.widget__show-hidden');
+const hiddenCheckboxes = document.querySelectorAll('.checkbox-hidden');
+
+showMoreOptions.onclick = function () {
+
+  if (showMoreOptions.dataset.options == 'hidden') {
+      hiddenCheckboxes.forEach(function (item) {
+      item.style.display = 'block';
+    });
+    showMoreOptions.innerText = 'Скрыть дополнительные опции';
+    showMoreOptions.dataset.options = 'visible';
+  } 
+  else if (showMoreOptions.dataset.options == 'visible') {
+      hiddenCheckboxes.forEach(function (item) {
+      item.style.display = 'none';
+    });
+    showMoreOptions.innerText = 'Показать ещё';
+    showMoreOptions.dataset.options = 'hidden';
+  }
+  //showMoreOptions.remove();
+  //showMoreOptions.innerText = 'Скрыть дополнительные опции'
+}

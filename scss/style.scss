@@ -140,7 +140,6 @@
     color: #000;
     margin-bottom: 21px;
     position: relative;
-    background: firebrick;
     cursor: pointer;
     &::after {
       position: absolute;
@@ -436,7 +435,7 @@
   position: relative;
   width: 30px;
   height: 5px;
-  background-color: #fff;
+  background-color: #d97f7f;
 }
 
 .menu-icon::before {
@@ -446,7 +445,7 @@
   content: "";
   width: 30px;
   height: 5px;
-  background-color: #fff;
+  background-color: #d97f7f;
   transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
 }
 
@@ -457,7 +456,7 @@
   content: "";
   width: 30px;
   height: 5px;
-  background-color: #fff;
+  background-color: #d97f7f;
   transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
 }
 
@@ -468,6 +467,7 @@
 .menu-icon.menu-icon-active::before {
   transform: rotate(45deg);
   top: 0;
+  border-radius: 3px;
   transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
 }
 
@@ -475,6 +475,7 @@
   transform: rotate(-45deg);
   top: 0;
   transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+  border-radius: 3px;
 }
 .card-link--hidden{
   display: none !important;
@@ -483,6 +484,10 @@
   transform: rotate(180deg);
 }
 .widget__body--hidden{
+  display: none;
+  outline: none;
+}
+.checkbox-hidden{
   display: none;
 }
 @import "media";
